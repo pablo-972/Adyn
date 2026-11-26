@@ -22,7 +22,7 @@ BANNER = r"""
 def build_parser() -> argparse.ArgumentParser:
     parser = _BannerParser(
         prog="adyn",
-        description="Android dynamic analysis lab.",
+        description="Android analysis lab.",
     )
 
     add_config_argument(parser)
