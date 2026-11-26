@@ -1,0 +1,4 @@
+cryptography>=42
+frida-tools>=13
+objection>=1.11
+requests>=2.31

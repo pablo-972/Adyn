@@ -1,0 +1,45 @@
+# adyn configuration. Copy to adyn.toml (setup/init.sh does it for you).
+# Every section and key is optional except the devices themselves.
+
+[android]
+# Default: $ANDROID_HOME, otherwise ~/Android/Sdk (Linux) or %LOCALAPPDATA%\Android\Sdk (Windows)
+# sdk = "~/Android/Sdk"
+
+[burp]
+# jar = ".adyn/burpsuite_community.jar"    # downloaded by setup/init.sh
+# port = 8080                                # must match Burp's proxy listener
+# java = "java"
+# startup_timeout = 180
+
+[mobsf]
+# Static analysis with `adyn scan app.apk`. Runs in Docker.
+# port = 8000
+# startup_timeout = 180
+
+# Devices
+#   image  = "..."  -> emulator created by `setup` (system image for sdkmanager)
+#   serial = "..."  -> physical device (from `adb devices`)
+#   rooted = true   -> Burp CA in the system store + frida-server
+#   rooted = false  -> Burp CA copied for manual install, no frida-server
+# Use google_apis images for rooted emulators (`adb root` works there) and
+# google_apis_playstore for a non-rooted, production-like one.
+
+[[devices]]
+name = "rooted"
+rooted = true
+image = "system-images;android-34;google_apis;x86_64"
+# profile = "pixel_6"    # see `avdmanager list device`
+# headless = false
+# ram = 4096             # MB
+# cores = 4
+# gpu = "auto"           # auto, host (fastest) or swiftshader_indirect
+
+[[devices]]
+name = "stock"
+rooted = false
+image = "system-images;android-34;google_apis_playstore;x86_64"
+
+# [[devices]]
+# name = "pixel7"
+# serial = "28141FDH2000AB"
+# rooted = true          # Magisk / su

@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+# Local configuration (copied from adyn.example.toml)
+/adyn.toml
+# MobSF reports
+/reports/
+# Downloads, logs and state of adyn
+/.adyn/
+# Instructions for coding agents, kept local
+/AGENTS.md
