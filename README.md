@@ -8,7 +8,7 @@
 <h1 align="center">Adyn</h1>
 
 <p align="center">
-  An Android dynamic analysis lab, set up with one command.
+  An Android analysis lab, set up with one command.
 </p>
 
 <br>
